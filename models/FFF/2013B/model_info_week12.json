@@ -1,0 +1,7 @@
+{
+  "module": "FFF",
+  "presentation": "2013B",
+  "week": "week12",
+  "best_model": "random_forest",
+  "uses_scaler": false
+}

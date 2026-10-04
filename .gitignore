@@ -1,0 +1,63 @@
+# ==============================
+# Python
+# ==============================
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+backend/.venv/
+
+# ==============================
+# Environment / secrets
+# ==============================
+.env
+.env.*
+!.env.example
+
+# ==============================
+# Local databases
+# ==============================
+*.db
+*.sqlite
+*.sqlite3
+
+# ==============================
+# Uploaded / raw runtime data
+# ==============================
+uploads/
+backend/uploads/
+
+# ==============================
+# Generated ETL/runtime outputs
+# ==============================
+generated/
+backend/generated/
+
+# ==============================
+# Frontend
+# ==============================
+frontend/node_modules/
+frontend/dist/
+node_modules/
+
+# ==============================
+# Logs / caches
+# ==============================
+*.log
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# ==============================
+# IDE / OS
+# ==============================
+.vscode/
+.idea/
+.DS_Store
+# Vite cache
+.vite/
+
+# Oversized fallback ML artifact
+models/global/fallback/risk_model_week4.pkl

@@ -1,0 +1,268 @@
+.help-support-page {
+  margin: 0 auto !important;
+  padding: 22px 14px 24px !important;
+  color: var(--text);
+  font-family: inherit;
+  line-height: 1.35;
+}
+
+.help-support-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.help-support-header h1 {
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.15;
+  font-weight: 600;
+}
+
+.help-support-header p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.help-theme-btn {
+  margin-top: 2px;
+}
+
+.helpHeaderActions {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.helpBackBtn {
+  height: 42px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--text);
+  padding: 0 14px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.help-section {
+  margin-top: 18px;
+}
+
+.help-section h2 {
+  margin: 0 0 14px;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 20px;
+}
+
+.service-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px 0 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.service-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 9px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.service-icon--blue {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.service-icon--purple {
+  background: #ede9fe;
+  color: #7c3aed;
+}
+
+.service-icon--green {
+  background: #d1fae5;
+  color: #059669;
+}
+
+.service-icon--yellow {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.service-content h3 {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+.service-content p {
+  margin: 4px 0 10px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.service-contact {
+  display: grid;
+  gap: 4px;
+}
+
+.service-contact > div {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #334155;
+}
+
+.faq-list {
+  margin-top: 4px;
+}
+
+.faq-item {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.faq-item h3 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.faq-item p {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.urgent-help-card {
+  margin-top: 26px;
+  border-radius: 8px;
+  border-left: 3px solid #ef4444;
+  background: #f7eff0;
+  padding: 14px 18px 16px;
+}
+
+.urgent-help-card h3 {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.25;
+  font-weight: 600;
+}
+
+.urgent-help-card p {
+  margin: 8px 0 14px;
+  color: #334155;
+  font-size: 15px;
+}
+
+.urgent-help-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.urgent-btn {
+  height: 36px;
+  border-radius: 7px;
+  border: 1px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.urgent-btn--danger {
+  background: #e11d2e;
+  border-color: #e11d2e;
+  color: #ffffff;
+}
+
+.urgent-btn--chat {
+  background: #ffffff;
+  border-color: #d1d5db;
+  color: #111827;
+}
+
+.dash--dark .service-contact > div {
+  color: #cbd5e1;
+}
+
+.dash--dark .urgent-help-card {
+  background: rgba(239, 68, 68, 0.13);
+}
+
+.dash--dark .urgent-help-card p {
+  color: #cbd5e1;
+}
+
+.dash--dark .urgent-btn--chat {
+  background: rgba(15, 26, 43, 0.7);
+  border-color: rgba(148, 163, 184, 0.34);
+  color: #e5e7eb;
+}
+
+@media (max-width: 860px) {
+  .help-support-page {
+    padding: 20px 12px 18px !important;
+  }
+
+  .help-support-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .help-support-header h1 {
+    font-size: 22px;
+  }
+
+  .help-support-header p {
+    font-size: 13px;
+  }
+
+  .helpHeaderActions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .helpBackBtn {
+    height: 40px;
+    font-size: 13px;
+    padding: 0 12px;
+  }
+
+  .help-section h2 {
+    font-size: 16px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .urgent-help-card h3 {
+    font-size: 16px;
+  }
+}

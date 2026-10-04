@@ -1,0 +1,7 @@
+{
+  "module": "FFF",
+  "presentation": "2013J",
+  "week": "week12",
+  "best_model": "grad_boost",
+  "uses_scaler": false
+}

@@ -1,0 +1,7 @@
+{
+  "module": "EEE",
+  "presentation": "2014B",
+  "week": "week4",
+  "best_model": "logreg_scaled",
+  "uses_scaler": true
+}

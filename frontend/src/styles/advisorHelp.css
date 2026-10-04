@@ -1,0 +1,323 @@
+.advisorHelpPage {
+  min-height: 100vh;
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+.advisorHelpPage--dark {
+  background: linear-gradient(180deg, #020617 0%, #071226 100%);
+  color: #e2e8f0;
+}
+
+.advisorHelpShell {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+.advisorHelpHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.advisorHelpEyebrow {
+  display: inline-flex;
+  padding: 6px 11px;
+  border-radius: 999px;
+  background: #dbeafe;
+  color: #2563eb;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.advisorHelpHeader h1 {
+  margin: 12px 0 8px;
+  font-size: 48px;
+  line-height: 1;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.advisorHelpHeader p {
+  margin: 0;
+  max-width: 720px;
+  color: #64748b;
+  font-size: 15px;
+}
+
+.advisorHelpBackBtn,
+.advisorHelpSubmitBtn,
+.advisorHelpEmailBtn {
+  border: none;
+  border-radius: 13px;
+  background: #2563eb;
+  color: #ffffff;
+  padding: 12px 16px;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: inherit;
+}
+
+.advisorHelpSearchCard {
+  height: 58px;
+  border-radius: 18px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.06);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 18px;
+  margin-bottom: 22px;
+  color: #64748b;
+}
+
+.advisorHelpSearchCard input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #0f172a;
+  font-size: 15px;
+  font-family: inherit;
+}
+
+.advisorHelpGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.advisorHelpCard,
+.advisorHelpPanel,
+.advisorHelpSideCard {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 22px;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+}
+
+.advisorHelpCard {
+  padding: 22px;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  font-family: inherit;
+}
+
+.advisorHelpCard:hover {
+  transform: translateY(-2px);
+  border-color: #bfdbfe;
+}
+
+.advisorHelpIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 15px;
+  background: #eff6ff;
+  color: #2563eb;
+  display: grid;
+  place-items: center;
+  margin-bottom: 15px;
+}
+
+.advisorHelpIcon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.advisorHelpCard h2,
+.advisorHelpPanel h2,
+.advisorHelpSideCard h2 {
+  margin: 0;
+  color: #0f172a;
+}
+
+.advisorHelpCard h2 {
+  font-size: 18px;
+}
+
+.advisorHelpCard p,
+.advisorHelpFaqItem p,
+.advisorHelpSideCard p {
+  margin: 8px 0 0;
+  color: #64748b;
+  line-height: 1.55;
+  font-size: 14px;
+}
+
+.advisorHelpLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 22px;
+}
+
+.advisorHelpPanel {
+  padding: 24px;
+}
+
+.advisorHelpPanelHeader,
+.advisorHelpSideHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.advisorHelpFaq {
+  margin-top: 18px;
+  display: grid;
+  gap: 12px;
+}
+
+.advisorHelpFaqItem,
+.advisorHelpEmpty {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.advisorHelpFaqItem h3 {
+  margin: 0;
+  font-size: 16px;
+  color: #0f172a;
+}
+
+.advisorHelpSide {
+  display: grid;
+  gap: 18px;
+  align-content: start;
+}
+
+.advisorHelpSideCard {
+  padding: 20px;
+}
+
+.advisorHelpForm {
+  margin-top: 16px;
+  display: grid;
+  gap: 13px;
+}
+
+.advisorHelpForm label {
+  display: grid;
+  gap: 7px;
+  color: #475569;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.advisorHelpForm select,
+.advisorHelpForm textarea {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 13px;
+  background: #ffffff;
+  color: #0f172a;
+  padding: 11px 12px;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.advisorHelpForm textarea {
+  resize: vertical;
+}
+
+.advisorHelpSubmitBtn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.advisorHelpSuccess {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #059669;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.advisorHelpEmailBtn {
+  margin-top: 14px;
+}
+
+.advisorHelpPage--dark .advisorHelpHeader h1,
+.advisorHelpPage--dark .advisorHelpCard h2,
+.advisorHelpPage--dark .advisorHelpPanel h2,
+.advisorHelpPage--dark .advisorHelpSideCard h2,
+.advisorHelpPage--dark .advisorHelpFaqItem h3 {
+  color: #f8fafc;
+}
+
+.advisorHelpPage--dark .advisorHelpHeader p,
+.advisorHelpPage--dark .advisorHelpCard p,
+.advisorHelpPage--dark .advisorHelpFaqItem p,
+.advisorHelpPage--dark .advisorHelpSideCard p,
+.advisorHelpPage--dark .advisorHelpForm label {
+  color: #94a3b8;
+}
+
+.advisorHelpPage--dark .advisorHelpEyebrow {
+  background: rgba(37, 99, 235, 0.18);
+  color: #93c5fd;
+}
+
+.advisorHelpPage--dark .advisorHelpSearchCard,
+.advisorHelpPage--dark .advisorHelpCard,
+.advisorHelpPage--dark .advisorHelpPanel,
+.advisorHelpPage--dark .advisorHelpSideCard {
+  background: rgba(15, 23, 42, 0.9);
+  border-color: rgba(148, 163, 184, 0.16);
+  box-shadow: 0 18px 40px rgba(2, 6, 23, 0.34);
+}
+
+.advisorHelpPage--dark .advisorHelpFaqItem,
+.advisorHelpPage--dark .advisorHelpEmpty {
+  background: rgba(30, 41, 59, 0.75);
+  border-color: rgba(148, 163, 184, 0.16);
+}
+
+.advisorHelpPage--dark .advisorHelpSearchCard input,
+.advisorHelpPage--dark .advisorHelpForm select,
+.advisorHelpPage--dark .advisorHelpForm textarea {
+  color: #e2e8f0;
+  background: #0f172a;
+  border-color: rgba(148, 163, 184, 0.25);
+}
+
+@media (max-width: 1050px) {
+  .advisorHelpGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .advisorHelpLayout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .advisorHelpHeader {
+    flex-direction: column;
+  }
+
+  .advisorHelpHeader h1 {
+    font-size: 40px;
+  }
+
+  .advisorHelpGrid {
+    grid-template-columns: 1fr;
+  }
+  .advisorHelpEmailBtn {
+  margin-top: 14px;
+}
+}

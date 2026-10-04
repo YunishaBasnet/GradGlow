@@ -1,0 +1,7 @@
+{
+  "module": "CCC",
+  "presentation": "2014B",
+  "week": "week12",
+  "best_model": "grad_boost",
+  "uses_scaler": false
+}

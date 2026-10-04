@@ -1,0 +1,431 @@
+.landingShell {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+  padding: 14px 28px 56px;
+  background: linear-gradient(180deg, #eef4ff 0%, #f7f8fc 52%, #f6f7fb 100%);
+}
+
+.landingBlur {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(90px);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.landingBlurLeft {
+  width: 360px;
+  height: 360px;
+  left: -110px;
+  top: 180px;
+  background: rgba(96, 165, 250, 0.35);
+}
+
+.landingBlurRight {
+  width: 380px;
+  height: 380px;
+  right: -120px;
+  top: 120px;
+  background: rgba(192, 132, 252, 0.34);
+}
+
+.landingTopbar {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.landingBrandWrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.landingBrandIcon {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #2563eb 0%, #9333ea 100%);
+  box-shadow: 0 10px 22px rgba(99, 102, 241, 0.18);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.2rem;
+  transform: none;
+}
+
+.landingBrand {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  color: #0f172a;
+}
+
+.landingLoginBtn {
+  border: 0;
+  border-radius: 20px;
+  padding: 12px 26px;
+  background: #0f172a;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.18);
+  transition: all 0.2s ease;
+}
+
+.landingLoginBtn:hover {
+  transform: translateY(-2px);
+}
+
+.landingMain {
+  position: relative;
+  z-index: 2;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.landingHero {
+  position: relative;
+  z-index: 2;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 10px 18px 10px;
+  text-align: center;
+}
+
+.landingBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 18px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: rgba(99, 102, 241, 0.1);
+  color: #4f46e5;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.landingBadge.small {
+  margin-bottom: 14px;
+}
+
+.landingBadgeIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.landingHeading {
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: clamp(2.8rem, 6vw, 4.8rem);
+  line-height: 1.05;
+  letter-spacing: -0.05em;
+  color: #0f172a;
+}
+
+.landingHeading span {
+  background: linear-gradient(90deg, #2563eb 0%, #9333ea 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.landingText {
+  max-width: 820px;
+  margin: 24px auto 0;
+  color: #64748b;
+  font-size: 1.05rem;
+  line-height: 1.85;
+}
+
+.landingActions {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.landingPrimaryBtn,
+.landingSecondaryBtn {
+  min-width: 190px;
+  padding: 15px 24px;
+  border-radius: 18px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease,
+    border-color 0.2s ease, color 0.2s ease;
+}
+
+.landingPrimaryBtn {
+  border: none;
+  color: #fff;
+  background: linear-gradient(90deg, #2563eb 0%, #9333ea 100%);
+  box-shadow: 0 16px 30px rgba(124, 58, 237, 0.2);
+}
+
+.landingPrimaryBtn:hover {
+  transform: translateY(-2px);
+}
+
+.landingSecondaryBtn {
+  border: 1px solid rgba(148, 163, 184, 0.26);
+  background: rgba(255, 255, 255, 0.7);
+  color: #0f172a;
+}
+
+.landingSecondaryBtn:hover {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: #6366f1;
+  color: #6366f1;
+}
+
+.floatingIcon {
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.74);
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.06);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  font-size: 1.4rem;
+  animation: floatSoft 5s ease-in-out infinite;
+  z-index: 0;
+  opacity: 0.45;
+  transform: scale(0.9);
+  filter: blur(0.3px);
+}
+
+.floatingIconLeftTop {
+  left: -40px;
+  top: 120px;
+}
+
+.floatingIconLeftBottom {
+  left: -20px;
+  bottom: 0;
+}
+
+.floatingIconRightTop {
+  right: -40px;
+  top: 120px;
+}
+
+.floatingIconRightBottom {
+  right: -20px;
+  bottom: 0;
+}
+
+.landingFeatureGrid {
+  margin-top: 44px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.landingFeatureCard {
+  border-radius: 26px;
+  padding: 28px 24px;
+  background: rgba(255, 255, 255, 0.62);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.68);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.06);
+  transition: all 0.25s ease;
+}
+
+.landingFeatureCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 50px rgba(15, 23, 42, 0.12);
+}
+
+.landingFeatureTop {
+  margin-bottom: 16px;
+}
+
+.landingFeatureCircle {
+  width: 56px;
+  height: 56px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(99, 102, 241, 0.1);
+  font-size: 1.4rem;
+}
+
+.landingFeatureCard h3 {
+  margin: 0 0 10px;
+  font-size: 1.45rem;
+  color: #111827;
+}
+
+.landingFeatureCard p {
+  margin: 0;
+  color: #64748b;
+  line-height: 1.75;
+}
+
+.platformOverview {
+  margin-top: 96px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(15, 23, 42,0.06);
+}
+
+.overviewHeader {
+  max-width: 840px;
+  margin: 0 auto 28px;
+  text-align: center;
+}
+
+.overviewHeader h2 {
+  margin: 0 0 14px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.12;
+  color: #0f172a;
+}
+
+.overviewHeader p {
+  margin: 0;
+  color: #64748b;
+  line-height: 1.8;
+  font-size: 1.06rem;
+}
+
+.overviewGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 28px;
+}
+
+.overviewCard {
+  min-height: 245px;
+  border-radius: 24px;
+  padding: 26px 22px;
+  background: rgba(255, 255, 255, 0.72);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.78);
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.06);
+}
+
+.overviewIcon {
+  font-size: 1.5rem;
+  margin-bottom: 14px;
+}
+
+.overviewCard h3 {
+  margin: 0 0 10px;
+  font-size: 1.35rem;
+  font-weight: 800;
+  line-height: 1.3;
+  color: #0f172a;
+  opacity: 1;
+}
+
+.overviewCard p {
+  margin: 0;
+  color: #64748b;
+  line-height: 1.75;
+}
+
+.howItWorksRow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 24px;
+}
+
+.stepCard {
+  border-radius: 24px;
+  padding: 24px 22px;
+  background: rgba(255, 255, 255, 0.62);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.68);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.06);
+}
+
+.stepNumber {
+  display: inline-block;
+  margin-bottom: 14px;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #4f46e5;
+  letter-spacing: 0.08em;
+}
+
+.stepCard h4 {
+  margin: 0 0 10px;
+  font-size: 1.12rem;
+  color: #0f172a;
+}
+
+.stepCard p {
+  margin: 0;
+  color: #64748b;
+  line-height: 1.7;
+}
+
+@keyframes floatSoft {
+  0%,
+  100% {
+    transform: translateY(0) scale(0.9);
+  }
+  50% {
+    transform: translateY(-8px) scale(0.9);
+  }
+}
+
+@media (max-width: 1100px) {
+  .floatingIcon {
+    display: none;
+  }
+}
+
+@media (max-width: 960px) {
+  .landingShell {
+    padding: 18px 16px 42px;
+  }
+
+  .landingFeatureGrid,
+  .overviewGrid,
+  .howItWorksRow {
+    grid-template-columns: 1fr;
+  }
+
+  .landingHeading {
+    font-size: 2.9rem;
+  }
+
+  .landingText {
+    font-size: 1rem;
+  }
+
+  .landingBrandIcon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .landingBrand {
+    font-size: 1.45rem;
+  }
+}

@@ -1,0 +1,1137 @@
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  background: #f8fafc;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+.app.light {
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+.app.dark {
+  background: #07111f;
+  color: #e5e7eb;
+}
+* {
+  box-sizing: border-box;
+}
+
+.adminPage {
+  min-height: 100vh;
+  display: flex;
+  background: #07111f;
+  color: #e5e7eb;
+  font-family: inherit;
+}
+
+.adminSidebar {
+  width: 255px;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  background: #07101e;
+  border-right: 1px solid rgba(148, 163, 184, 0.15);
+  padding: 22px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.adminBrand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.adminShield {
+  width: 54px;
+  height: 54px;
+  color: #6366f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.adminBrand h1 {
+  margin: 0;
+  font-size: 26px;
+  line-height: 1;
+}
+
+.adminBrand h1 span {
+  color: #6366f1;
+}
+
+.adminBrand p {
+  margin: 6px 0 0;
+  color: #9ca3af;
+}
+
+.adminMenuLabel {
+  margin: 38px 10px 14px;
+  color: #64748b;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+
+.adminNav {
+  display: grid;
+  gap: 8px;
+}
+
+.adminNav button {
+  border: 0;
+  width: 100%;
+  height: 48px;
+  border-radius: 10px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #a8b4c8;
+  background: transparent;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.adminNav button.active {
+  color: white;
+  background: linear-gradient(90deg, #2563eb, #9333ea);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.25);
+}
+
+.adminNav button:hover {
+  background: rgba(148, 163, 184, 0.08);
+}
+
+.adminDivider {
+  height: 1px;
+  margin: 28px 6px;
+  background: rgba(148, 163, 184, 0.15);
+}
+
+.adminUserArea {
+  display: grid;
+  gap: 12px;
+}
+
+.adminUserCard {
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #0c1728;
+}
+
+.adminAvatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2563eb, #9333ea);
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  color: white;
+  overflow: hidden;
+}
+
+.adminAvatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.adminUserCard h4 {
+  margin: 0;
+}
+
+.adminUserCard p {
+  margin: 4px 0 0;
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+.adminLogout {
+  height: 48px;
+  border-radius: 10px;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  background: transparent;
+  color: #f43f5e;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  align-items: center;
+}
+
+.adminMain {
+  flex: 1;
+  height: 100vh;
+  padding: 24px 28px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.adminHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+  padding-bottom: 18px;
+  margin-bottom: 22px;
+}
+
+.adminHeader h2 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.adminHeader p {
+  margin: 8px 0 0;
+  color: #9ca3af;
+}
+
+.adminHeaderRight {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.adminTopCard {
+  width: 210px;
+  height: 62px;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  background: #0c1728;
+  border-radius: 9px;
+  padding: 10px 14px;
+  position: relative;
+}
+
+.adminTopCard span {
+  display: block;
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.adminTopCard strong {
+  display: block;
+  margin-top: 6px;
+  font-size: 16px;
+}
+
+.adminTopCard svg {
+  position: absolute;
+  right: 14px;
+  bottom: 15px;
+  color: #94a3b8;
+}
+
+.greenDot {
+  color: #10b981;
+}
+
+.greenDot::before {
+  content: "";
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  background: #10b981;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.adminBell {
+  position: relative;
+  width: 54px;
+  height: 54px;
+  border: 0;
+  background: transparent;
+  color: #cbd5e1;
+  cursor: pointer;
+}
+
+.adminBell span {
+  position: absolute;
+  top: 5px;
+  right: 8px;
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: #f43f5e;
+  color: white;
+  font-size: 11px;
+  display: grid;
+  place-items: center;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.statCard {
+  min-height: 116px;
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  background: #0c1728;
+  border-radius: 10px;
+  padding: 18px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 16px;
+  align-items: center;
+}
+
+.statCard:hover,
+.quickCard:hover,
+.adminPanel:hover,
+.studentSummaryCard:hover,
+.studentsTablePanel:hover {
+  transform: translateY(-3px);
+  transition: 0.25s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.statIcon {
+  width: 54px;
+  height: 54px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+}
+
+.statIcon.blue {
+  background: #1455d9;
+}
+
+.statIcon.purple {
+  background: #7c2bd8;
+}
+
+.statIcon.orange {
+  background: #f97316;
+}
+
+.statIcon.red {
+  background: #e11d48;
+}
+
+.statCard p {
+  margin: 0;
+  color: #cbd5e1;
+}
+
+.statCard h3 {
+  margin: 8px 0 4px;
+  font-size: 30px;
+}
+
+.positive {
+  color: #10b981;
+  font-size: 12px;
+}
+
+.negative {
+  color: #f43f5e;
+  font-size: 12px;
+}
+
+.warningText {
+  color: #f59e0b;
+  font-size: 12px;
+}
+
+.miniSpark {
+  width: 62px;
+  height: 30px;
+  border-radius: 10px;
+  opacity: 0.7;
+}
+
+.blueSpark {
+  background: linear-gradient(135deg, transparent, rgba(37, 99, 235, 0.65));
+}
+
+.purpleSpark {
+  background: linear-gradient(135deg, transparent, rgba(147, 51, 234, 0.65));
+}
+
+.orangeSpark {
+  background: linear-gradient(135deg, transparent, rgba(249, 115, 22, 0.65));
+}
+
+.redSpark {
+  background: linear-gradient(135deg, transparent, rgba(244, 63, 94, 0.65));
+}
+
+.adminTwoCol {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 14px;
+}
+
+.adminTwoCol.lower {
+  grid-template-columns: 1fr 1fr;
+}
+
+.adminPanel {
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  background: #0c1728;
+  border-radius: 10px;
+  padding: 18px;
+}
+
+.panelHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.panelHeader h3 {
+  margin: 0;
+  font-size: 19px;
+}
+
+.panelHeader p {
+  margin: 5px 0 0;
+  color: #9ca3af;
+  font-size: 13px;
+}
+
+.panelHeader button {
+  border: 0;
+  background: transparent;
+  color: #3b82f6;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.quickGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.quickCard {
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  background: #111c2f;
+  border-radius: 9px;
+  min-height: 176px;
+  padding: 18px 14px;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+}
+
+.quickIcon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 14px;
+}
+
+.quickIcon.blue {
+  background: #1455d9;
+}
+
+.quickIcon.purple {
+  background: #7c2bd8;
+}
+
+.quickIcon.green {
+  background: #10b981;
+}
+
+.quickIcon.amber {
+  background: #f59e0b;
+}
+
+.quickCard h4 {
+  margin: 0 0 8px;
+}
+
+.quickCard p {
+  margin: 0;
+  color: #cbd5e1;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.quickCard span {
+  display: block;
+  margin-top: 12px;
+  font-size: 22px;
+}
+
+.alertList {
+  display: grid;
+}
+
+.alertRow {
+  display: grid;
+  grid-template-columns: 45px 1fr auto;
+  gap: 12px;
+  align-items: center;
+  padding: 15px 0;
+  border-top: 1px solid rgba(148, 163, 184, 0.13);
+}
+
+.alertRow > div:first-child {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+}
+
+.alertRow h4 {
+  margin: 0;
+  font-size: 14px;
+}
+
+.alertRow p {
+  margin: 5px 0 0;
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+.alertRow span {
+  font-size: 12px;
+}
+
+.redAlert > div:first-child {
+  background: rgba(244, 63, 94, 0.16);
+  color: #f43f5e;
+}
+
+.redAlert span {
+  color: #f43f5e;
+}
+
+.yellowAlert > div:first-child {
+  background: rgba(245, 158, 11, 0.16);
+  color: #f59e0b;
+}
+
+.yellowAlert span {
+  color: #f59e0b;
+}
+
+.blueAlert > div:first-child {
+  background: rgba(37, 99, 235, 0.16);
+  color: #2563eb;
+}
+
+.blueAlert span {
+  color: #2563eb;
+}
+
+.adminTable,
+.workTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.adminTable th,
+.workTable th {
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 10px 8px;
+  text-align: left;
+}
+
+.adminTable td,
+.workTable td {
+  padding: 10px 8px;
+  border-top: 1px solid rgba(148, 163, 184, 0.11);
+  color: #dbe3ef;
+  font-size: 13px;
+}
+
+.adminTable td:first-child,
+.workTable td:first-child {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.uploadBadge {
+  padding: 5px 10px;
+  border-radius: 7px;
+  font-size: 12px;
+}
+
+.processed {
+  background: rgba(16, 185, 129, 0.18);
+  color: #10b981;
+}
+
+.pending {
+  background: rgba(245, 158, 11, 0.18);
+  color: #f59e0b;
+}
+
+.failed {
+  background: rgba(244, 63, 94, 0.18);
+  color: #f43f5e;
+}
+
+.placeholderPanel {
+  margin-top: 22px;
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  background: #0c1728;
+  border-radius: 10px;
+  padding: 24px;
+}
+
+.placeholderPanel h3 {
+  margin: 0;
+}
+
+.placeholderPanel p {
+  color: #94a3b8;
+}
+
+/* STUDENTS / SHARED ADMIN PAGES */
+
+.studentsAdminPage {
+  display: grid;
+  gap: 18px;
+}
+
+.studentsAdminHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.studentsAdminHeader h2 {
+  margin: 0;
+  font-size: 26px;
+}
+
+.studentsAdminHeader p {
+  margin: 6px 0 0;
+  color: #94a3b8;
+}
+
+.primaryActionBtn {
+  border: none;
+  border-radius: 10px;
+  padding: 12px 18px;
+  color: white;
+  font-weight: 700;
+  background: linear-gradient(90deg, #2563eb, #9333ea);
+  cursor: pointer;
+}
+
+.studentsSummaryGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.studentSummaryCard {
+  background: #0c1728;
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  border-radius: 10px;
+  padding: 18px;
+}
+
+.studentSummaryCard span {
+  display: block;
+  color: #94a3b8;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.studentSummaryCard strong {
+  font-size: 28px;
+}
+
+.studentsTablePanel {
+  background: #0c1728;
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  border-radius: 10px;
+  padding: 18px;
+}
+
+.studentsTableTop {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.studentsTableTop h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.studentsTableTop p {
+  margin: 5px 0 0;
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+.studentSearchInput {
+  width: 260px;
+  height: 42px;
+  border-radius: 10px;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  background: #07111f;
+  color: white;
+  padding: 0 14px;
+  outline: none;
+}
+
+.studentsAdminTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.studentsAdminTable th {
+  color: #64748b;
+  font-size: 12px;
+  text-align: left;
+  padding: 12px 10px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.studentsAdminTable td {
+  padding: 14px 10px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+  color: #dbe3ef;
+  font-size: 14px;
+}
+
+.studentIdentity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.studentIdentity strong {
+  display: block;
+}
+
+.studentIdentity span {
+  display: block;
+  color: #94a3b8;
+  font-size: 12px;
+  margin-top: 3px;
+}
+
+.studentAvatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2563eb, #9333ea);
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  color: white;
+}
+
+.studentBadge {
+  display: inline-flex;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.badgeActive,
+.badgeLow {
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.15);
+}
+
+.badgePending,
+.badgeMedium {
+  color: #f59e0b;
+  background: rgba(245, 158, 11, 0.15);
+}
+
+.badgeHigh {
+  color: #f43f5e;
+  background: rgba(244, 63, 94, 0.15);
+}
+
+.tableActionBtn {
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 8px;
+  background: transparent;
+  color: #60a5fa;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.tableActionBtn:hover {
+  background: rgba(37, 99, 235, 0.12);
+}
+
+/* SETTINGS PAGE */
+
+.settingsFormGrid {
+  display: grid;
+  gap: 14px;
+}
+
+.settingsFormGrid label {
+  display: grid;
+  gap: 7px;
+  color: #cbd5e1;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.settingsFormGrid input {
+  height: 44px;
+  border-radius: 10px;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  background: #07111f;
+  color: #ffffff;
+  padding: 0 14px;
+  outline: none;
+}
+
+.settingsFormGrid input:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.settingsToggleGrid {
+  display: grid;
+  gap: 12px;
+}
+
+.settingsToggleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 14px;
+  border-radius: 12px;
+  background: #07111f;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+}
+
+.settingsToggleRow p {
+  margin: 5px 0 0;
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+.settingsToggleRow input {
+  width: 22px;
+  height: 22px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1300px) {
+  .statsGrid,
+  .quickGrid,
+  .studentsSummaryGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .adminTwoCol,
+  .adminTwoCol.lower {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .adminPage {
+    flex-direction: column;
+  }
+
+  .adminSidebar {
+    width: 100%;
+  }
+
+  .adminHeader {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .adminHeaderRight {
+    flex-wrap: wrap;
+  }
+
+  .statsGrid,
+  .quickGrid,
+  .studentsSummaryGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .studentsTableTop,
+  .studentsAdminHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .studentSearchInput {
+    width: 100%;
+  }
+
+  .studentsTablePanel {
+    overflow-x: auto;
+  }
+
+  .studentsAdminTable {
+    min-width: 950px;
+  }
+}
+
+/* LIGHT MODE SUPPORT */
+
+.adminPage--light {
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+.adminPage--light .adminSidebar {
+  background: #ffffff;
+  border-right: 1px solid #e2e8f0;
+}
+
+.adminPage--light .adminMain {
+  background: #f8fafc;
+}
+
+.adminPage--light .adminNav button {
+  color: #334155;
+}
+
+.adminPage--light .adminNav button:hover {
+  background: #f1f5f9;
+}
+
+.adminPage--light .adminNav button.active {
+  color: white;
+  background: linear-gradient(90deg, #2563eb, #9333ea);
+}
+
+.adminPage--light .adminUserCard,
+.adminPage--light .quickCard,
+.adminPage--light .adminPanel,
+.adminPage--light .statCard,
+.adminPage--light .studentSummaryCard,
+.adminPage--light .studentsTablePanel,
+.adminPage--light .placeholderPanel,
+.adminPage--light .adminTopCard,
+.adminPage--light .settingsToggleRow {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  color: #0f172a;
+}
+
+.adminPage--light .adminBrand h1,
+.adminPage--light .adminHeader h2,
+.adminPage--light .studentsAdminHeader h2,
+.adminPage--light .panelHeader h3,
+.adminPage--light .quickCard h4,
+.adminPage--light .statCard h3,
+.adminPage--light .studentSummaryCard strong,
+.adminPage--light .adminUserCard h4,
+.adminPage--light .studentsTableTop h3,
+.adminPage--light .studentsAdminTable td,
+.adminPage--light .adminTable td,
+.adminPage--light .studentIdentity strong,
+.adminPage--light .settingsFormGrid label {
+  color: #0f172a;
+}
+
+.adminPage--light .adminHeader p,
+.adminPage--light .studentsAdminHeader p,
+.adminPage--light .panelHeader p,
+.adminPage--light .quickCard p,
+.adminPage--light .studentSummaryCard span,
+.adminPage--light .adminUserCard p,
+.adminPage--light .placeholderPanel p,
+.adminPage--light .studentsTableTop p,
+.adminPage--light .studentIdentity span {
+  color: #64748b;
+}
+
+.adminPage--light .studentSearchInput,
+.adminPage--light .settingsFormGrid input {
+  background: #ffffff;
+  color: #0f172a;
+  border-color: #cbd5e1;
+}
+
+.adminPage--light .studentsAdminTable th {
+  color: #64748b;
+}
+
+.adminThemeBtn {
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  border: 1px solid #e2e8f0;
+  background: white;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.adminPage--dark .adminThemeBtn {
+  background: #0c1728;
+  color: #e2e8f0;
+  border-color: rgba(148, 163, 184, 0.15);
+}
+/* FIX LIGHT MODE TEXT + CARDS */
+
+.adminPage--light {
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+.adminPage--light .adminMain,
+.adminPage--light .adminSidebar {
+  background: #f8fafc;
+}
+
+.adminPage--light .adminSidebar {
+  background: #ffffff;
+}
+
+.adminPage--light h1,
+.adminPage--light h2,
+.adminPage--light h3,
+.adminPage--light h4,
+.adminPage--light strong,
+.adminPage--light p,
+.adminPage--light span,
+.adminPage--light td {
+  color: #0f172a;
+}
+
+.adminPage--light .adminHeader p,
+.adminPage--light .adminBrand p,
+.adminPage--light .adminMenuLabel,
+.adminPage--light .panelHeader p,
+.adminPage--light .quickCard p,
+.adminPage--light .statCard p,
+.adminPage--light .adminUserCard p,
+.adminPage--light .placeholderPanel p {
+  color: #475569;
+}
+
+.adminPage--light .statCard,
+.adminPage--light .quickCard,
+.adminPage--light .adminPanel,
+.adminPage--light .placeholderPanel,
+.adminPage--light .adminTopCard,
+.adminPage--light .adminUserCard {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  box-shadow: none;
+}
+
+.adminPage--light .positive {
+  color: #059669;
+}
+
+.adminPage--light .negative {
+  color: #e11d48;
+}
+
+.adminPage--light .warningText {
+  color: #ea580c;
+}
+
+.adminPage--light .adminTopCard span {
+  color: #64748b;
+}
+
+.adminPage--light .adminTopCard strong {
+  color: #0f172a;
+}
+
+.adminPage--light .quickCard span {
+  color: #0f172a;
+}
+.adminPage--light {
+  background:
+    radial-gradient(circle at 8% 72%, rgba(147, 197, 253, 0.5), transparent 34%),
+    radial-gradient(circle at 94% 35%, rgba(196, 181, 253, 0.55), transparent 32%),
+    linear-gradient(135deg, #eef4ff 0%, #f8fafc 45%, #f3e8ff 100%);
+}
+
+.adminPage--light .adminMain {
+  background: transparent;
+}
+
+.adminPage--light .adminSidebar {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(16px);
+}
+/* MAKE ADMIN PAGE LOOK LIKE ONE UNIFIED PAGE */
+
+.adminPage--light {
+  background:
+    radial-gradient(circle at 10% 70%, rgba(147, 197, 253, 0.35), transparent 34%),
+    radial-gradient(circle at 92% 35%, rgba(196, 181, 253, 0.38), transparent 32%),
+    linear-gradient(135deg, #eef4ff 0%, #f8fafc 48%, #f3e8ff 100%);
+}
+
+.adminPage--light .adminMain {
+  background: transparent;
+}
+
+.adminPage--light .adminSidebar {
+  background: transparent;
+  border-right: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+.adminPage--light .statCard,
+.adminPage--light .quickCard,
+.adminPage--light .adminPanel,
+.adminPage--light .placeholderPanel,
+.adminPage--light .adminTopCard,
+.adminPage--light .adminUserCard,
+.adminPage--light .studentsTablePanel,
+.adminPage--light .studentSummaryCard {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow: none;
+}
+
+.adminPage--light .adminHeader {
+  border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+.adminPage--light .adminDivider {
+  background: rgba(148, 163, 184, 0.18);
+}

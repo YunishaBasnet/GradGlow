@@ -1,0 +1,7 @@
+{
+  "module": "GGG",
+  "presentation": "2014J",
+  "week": "week4",
+  "best_model": "random_forest",
+  "uses_scaler": false
+}

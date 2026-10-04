@@ -1,0 +1,31 @@
+body,
+#root {
+  font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+body,
+button,
+input,
+label,
+select,
+textarea,
+option,
+a {
+  font-family: inherit;
+}
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+}
+
+body {
+  background: #f8fafc;
+}
+
+body.dark {
+  background: #020617;
+}

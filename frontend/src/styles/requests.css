@@ -1,0 +1,596 @@
+.requestsPage {
+  min-height: 100vh;
+  background: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  font-family: inherit;
+  color: #0f172a;
+}
+
+.requestsHeader {
+  padding: 18px 24px 6px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.requestsHeadText h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.08;
+}
+
+.requestsHeadText p {
+  margin: 8px 0 0;
+  font-size: 14px;
+  color: #475569;
+}
+
+.requestsHeadActions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.newRequestBtn {
+  height: 44px;
+  border-radius: 10px;
+  border: 1px solid #2563eb;
+  background: #2563eb;
+  color: #ffffff;
+  padding: 0 16px;
+  font-size: 16px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.requestsBackBtn {
+  height: 44px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  color: #0f172a;
+  padding: 0 14px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.requestsThemeBtn {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  background: #eef2f7;
+  color: #0f172a;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.requestsMain {
+  flex: 1;
+  padding: 8px 24px 0;
+}
+
+.requestsCard {
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 16px;
+  background: #ffffff;
+  padding: 16px;
+  min-height: calc(100vh - 266px);
+}
+
+.requestsTabs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.requestsTab {
+  height: 46px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  background: #f1f5f9;
+  color: #334155;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 0 20px;
+  cursor: pointer;
+}
+
+.requestsTab--active {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.requestsDivider {
+  height: 1px;
+  background: #e2e8f0;
+  margin: 18px 0;
+}
+
+.requestsEmpty {
+  min-height: 440px;
+  border: 1px dashed #cbd5e1;
+  border-radius: 16px;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 12px;
+}
+
+.requestsEmptyIcon {
+  color: #94a3b8;
+}
+
+.requestsEmpty h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 500;
+  color: #334155;
+}
+
+.submitFirstBtn {
+  margin-top: 6px;
+  height: 46px;
+  border-radius: 12px;
+  border: 1px solid #2563eb;
+  background: #2563eb;
+  color: #ffffff;
+  padding: 0 20px;
+  font-size: 16px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.requestsList {
+  display: grid;
+  gap: 10px;
+}
+
+.requestItem {
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #f8fafc;
+  padding: 13px 14px;
+  display: grid;
+  gap: 6px;
+}
+
+.requestItemTitle {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.requestItemMeta {
+  color: #64748b;
+  font-size: 13px;
+}
+
+.requestPill {
+  justify-self: start;
+  border-radius: 999px;
+  padding: 3px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.requestPill--pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.requestPill--approved {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.requestPill--rejected {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.requestsPage .studentBottomNav {
+  margin-top: auto;
+}
+
+.requestModalOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  background: rgba(15, 23, 42, 0.5);
+  display: grid;
+  place-items: center;
+  padding: 16px;
+}
+
+.requestModalCard {
+  width: min(760px, calc(100vw - 36px));
+  max-height: calc(100vh - 52px);
+  overflow: auto;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  box-shadow: 0 22px 38px rgba(15, 23, 42, 0.22);
+  padding: 16px;
+}
+
+.requestModalHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.requestModalHeader h3 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.requestModalHeader p {
+  margin: 6px 0 0;
+  color: #64748b;
+  font-size: 15px;
+}
+
+.requestModalClose {
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #64748b;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.requestTypeTitle {
+  margin-top: 14px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.requestTypeGrid {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.requestTypeCard {
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  background: #ffffff;
+  text-align: left;
+  padding: 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.requestTypeCard--active {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.12);
+}
+
+.requestTypeIconWrap {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: #f1f5f9;
+  color: #475569;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.requestTypeText {
+  display: grid;
+  gap: 5px;
+}
+
+.requestTypeName {
+  font-size: 16px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.requestTypeDesc {
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.28;
+}
+
+.requestModalActions {
+  margin-top: 16px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.requestBtn {
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  padding: 0 20px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.requestBtn--cancel {
+  border-color: #d1d5db;
+  background: #ffffff;
+  color: #111827;
+}
+
+.requestBtn--submit {
+  background: #9bb7f9;
+  border-color: #9bb7f9;
+  color: #ffffff;
+}
+
+.requestBtn--submit:not(:disabled) {
+  background: #2563eb;
+  border-color: #2563eb;
+}
+
+.requestBtn:disabled {
+  cursor: not-allowed;
+  opacity: 0.9;
+}
+
+.requestsPage--dark {
+  background: #0b1220;
+  color: #e2e8f0;
+}
+
+.requestsPage--dark .requestsHeadText h1,
+.requestsPage--dark .requestsEmpty h2,
+.requestsPage--dark .requestModalHeader h3,
+.requestsPage--dark .requestTypeTitle,
+.requestsPage--dark .requestTypeName,
+.requestsPage--dark .requestItemTitle {
+  color: #e2e8f0;
+}
+
+.requestsPage--dark .requestsHeadText p,
+.requestsPage--dark .requestItemMeta,
+.requestsPage--dark .requestModalHeader p,
+.requestsPage--dark .requestTypeDesc {
+  color: #9aa8bc;
+}
+
+.requestsPage--dark .requestsCard,
+.requestsPage--dark .requestModalCard {
+  background: #0f172a;
+  border-color: rgba(148, 163, 184, 0.24);
+}
+
+.requestsPage--dark .requestsDivider {
+  background: rgba(148, 163, 184, 0.24);
+}
+
+.requestsPage--dark .requestsThemeBtn {
+  border-color: rgba(148, 163, 184, 0.24);
+  background: rgba(15, 23, 42, 0.92);
+  color: #e2e8f0;
+}
+
+.requestsPage--dark .requestsBackBtn {
+  border-color: rgba(148, 163, 184, 0.24);
+  background: rgba(15, 23, 42, 0.92);
+  color: #e2e8f0;
+}
+
+.requestsPage--dark .newRequestBtn,
+.requestsPage--dark .submitFirstBtn,
+.requestsPage--dark .requestsTab--active,
+.requestsPage--dark .requestBtn--submit:not(:disabled) {
+  background: #2563eb;
+  border-color: #2563eb;
+}
+
+.requestsPage--dark .requestsTab {
+  background: rgba(148, 163, 184, 0.18);
+  color: #dbe7f5;
+}
+
+.requestsPage--dark .requestsEmpty,
+.requestsPage--dark .requestItem {
+  border-color: rgba(148, 163, 184, 0.24);
+  background: rgba(15, 23, 42, 0.78);
+}
+
+.requestsPage--dark .requestModalClose,
+.requestsPage--dark .requestsEmptyIcon {
+  color: #a8b4c5;
+}
+
+.requestsPage--dark .requestTypeCard {
+  border-color: rgba(148, 163, 184, 0.3);
+  background: rgba(15, 23, 42, 0.92);
+}
+
+.requestsPage--dark .requestTypeCard--active {
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.18);
+}
+
+.requestsPage--dark .requestTypeIconWrap {
+  background: rgba(30, 41, 59, 0.9);
+  color: #cbd5e1;
+}
+
+.requestsPage--dark .requestBtn--cancel {
+  border-color: rgba(148, 163, 184, 0.3);
+  background: rgba(15, 23, 42, 0.88);
+  color: #e2e8f0;
+}
+
+@media (max-width: 1024px) {
+  .requestsHeadText h1 {
+    font-size: 21px;
+  }
+
+  .requestsHeadText p {
+    font-size: 16px;
+  }
+
+  .requestsCard {
+    min-height: calc(100vh - 248px);
+  }
+
+  .requestsTab {
+    font-size: 14px;
+  }
+
+  .requestsEmpty h2 {
+    font-size: 20px;
+  }
+
+  .newRequestBtn,
+  .submitFirstBtn {
+    font-size: 16px;
+  }
+
+  .requestModalHeader h3 {
+    font-size: 22px;
+  }
+
+  .requestModalHeader p {
+    font-size: 14px;
+  }
+
+  .requestTypeName {
+    font-size: 16px;
+  }
+
+  .requestTypeDesc {
+    font-size: 15px;
+  }
+
+  .requestBtn {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 760px) {
+  .requestsHeader {
+    padding: 14px 14px 4px;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .requestsMain {
+    padding: 8px 14px 0;
+  }
+
+  .requestsHeadText h1 {
+    font-size: 22px;
+  }
+
+  .requestsHeadText p {
+    font-size: 14px;
+  }
+
+  .requestsHeadActions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .newRequestBtn {
+    height: 40px;
+    font-size: 14px;
+    padding: 0 14px;
+  }
+
+  .requestsBackBtn {
+    height: 40px;
+    font-size: 13px;
+    padding: 0 12px;
+  }
+
+  .requestsThemeBtn {
+    width: 42px;
+    height: 42px;
+  }
+
+  .requestsCard {
+    padding: 12px;
+    min-height: calc(100vh - 220px);
+  }
+
+  .requestsTabs {
+    gap: 8px;
+  }
+
+  .requestsTab {
+    height: 40px;
+    font-size: 14px;
+    padding: 0 14px;
+  }
+
+  .requestsEmpty {
+    min-height: 340px;
+    gap: 10px;
+  }
+
+  .requestsEmpty h2 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .submitFirstBtn {
+    height: 40px;
+    font-size: 14px;
+    padding: 0 14px;
+  }
+
+  .requestModalCard {
+    padding: 14px;
+  }
+
+  .requestModalHeader h3 {
+    font-size: 24px;
+  }
+
+  .requestModalHeader p {
+    font-size: 14px;
+  }
+
+  .requestTypeGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .requestTypeName {
+    font-size: 20px;
+  }
+
+  .requestTypeDesc {
+    font-size: 14px;
+  }
+
+  .requestBtn {
+    height: 40px;
+    font-size: 14px;
+    padding: 0 14px;
+  }
+}

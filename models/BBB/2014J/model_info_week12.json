@@ -1,0 +1,7 @@
+{
+  "module": "BBB",
+  "presentation": "2014J",
+  "week": "week12",
+  "best_model": "grad_boost",
+  "uses_scaler": false
+}

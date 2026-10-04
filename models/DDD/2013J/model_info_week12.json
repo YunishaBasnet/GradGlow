@@ -1,0 +1,7 @@
+{
+  "module": "DDD",
+  "presentation": "2013J",
+  "week": "week12",
+  "best_model": "logreg_scaled",
+  "uses_scaler": true
+}

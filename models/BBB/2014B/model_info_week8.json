@@ -1,0 +1,7 @@
+{
+  "module": "BBB",
+  "presentation": "2014B",
+  "week": "week8",
+  "best_model": "logreg_scaled",
+  "uses_scaler": true
+}

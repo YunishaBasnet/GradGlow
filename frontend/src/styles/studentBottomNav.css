@@ -1,0 +1,102 @@
+.studentBottomNav{
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  gap: 6px;
+  padding: 10px 10px;
+  background: rgba(255,255,255,0.92);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(17,24,39,0.08);
+  z-index: 50;
+  font-family: inherit;
+}
+
+.studentNavItem{
+  flex: 1;
+  text-decoration: none;
+  color: #6b7280;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 6px;
+  border-radius: 12px;
+  transition: 0.2s ease;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: inherit;
+}
+
+.studentNavItemButton{
+  border: 0;
+  background: transparent;
+  font-family: inherit;
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.studentNavItem:hover{
+  background: rgba(17,24,39,0.06);
+  color: #111827;
+}
+
+.studentNavItem.active{
+  color: #111827;
+  background: rgba(99,102,241,0.10);
+}
+
+.dash--dark .studentBottomNav,
+.piPage--dark .studentBottomNav,
+.apPage--dark .studentBottomNav,
+.requestsPage--dark .studentBottomNav{
+  background: rgba(11,18,32,0.92);
+  border-top: 1px solid rgba(148,163,184,0.22);
+}
+
+.dash--dark .studentNavItem,
+.piPage--dark .studentNavItem,
+.apPage--dark .studentNavItem,
+.requestsPage--dark .studentNavItem{
+  color: #9ca3af;
+}
+
+.dash--dark .studentNavItem svg,
+.piPage--dark .studentNavItem svg,
+.apPage--dark .studentNavItem svg,
+.requestsPage--dark .studentNavItem svg{
+  color: #9ca3af;
+}
+
+.dash--dark .studentNavItem:hover,
+.piPage--dark .studentNavItem:hover,
+.apPage--dark .studentNavItem:hover,
+.requestsPage--dark .studentNavItem:hover{
+  background: rgba(148,163,184,0.12);
+  color: #e5e7eb;
+}
+
+.dash--dark .studentNavItem:hover svg,
+.piPage--dark .studentNavItem:hover svg,
+.apPage--dark .studentNavItem:hover svg,
+.requestsPage--dark .studentNavItem:hover svg{
+  color: #e5e7eb;
+}
+
+.dash--dark .studentNavItem.active,
+.piPage--dark .studentNavItem.active,
+.apPage--dark .studentNavItem.active,
+.requestsPage--dark .studentNavItem.active{
+  color: #e5e7eb;
+  background: rgba(99,102,241,0.22);
+}
+
+.dash--dark .studentNavItem.active svg,
+.piPage--dark .studentNavItem.active svg,
+.apPage--dark .studentNavItem.active svg,
+.requestsPage--dark .studentNavItem.active svg{
+  color: #e5e7eb;
+}

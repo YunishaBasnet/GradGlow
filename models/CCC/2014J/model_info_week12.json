@@ -1,0 +1,7 @@
+{
+  "module": "CCC",
+  "presentation": "2014J",
+  "week": "week12",
+  "best_model": "random_forest",
+  "uses_scaler": false
+}

@@ -1,0 +1,202 @@
+﻿.piPage{
+  min-height: 100vh;
+  background: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  font-family: inherit;
+  color: #0f172a;
+}
+
+.piHeader{
+  padding: 26px 22px 12px;
+}
+
+.piHeader h1{
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.piHeader p{
+  margin: 6px 0 0;
+  color: #64748b;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.piGrid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  padding: 18px 22px 22px;
+  flex: 1;
+}
+
+.piCard{
+  background: #fff;
+  border-radius: 16px;
+  padding: 18px;
+  border: 1px solid rgba(15,23,42,0.08);
+  box-shadow: 0 10px 22px rgba(15,23,42,0.05);
+}
+
+.piCardTitle{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.piTitleIcon{
+  width: 28px;
+  height: 28px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(99,102,241,0.10);
+  color: #4f46e5;
+}
+
+.piCardTitle h2{
+  margin: 0;
+  font-size: 14px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.piItem{
+  padding: 14px 0;
+  border-top: 1px solid rgba(15,23,42,0.08);
+}
+
+.piItem:first-of-type{
+  border-top: none;
+}
+
+.piLabelRow{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.piItemIcon{
+  color: #64748b;
+}
+
+.piValue{
+  margin-top: 6px;
+  color: #0f172a;
+  font-weight: 750;
+  font-size: 14px;
+}
+
+@media (max-width: 900px){
+  .piGrid{
+    grid-template-columns: 1fr;
+  }
+}
+
+.piHeader{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.piThemeBtn{
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(15,23,42,0.12);
+  background: #f8fafc;
+  color: #0f172a;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.piHeaderActions{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.piBackBtn{
+  height: 42px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  color: #0f172a;
+  padding: 0 14px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.piPage--dark{
+  background: #0b1220;
+  color: #e2e8f0;
+}
+
+.piPage--dark .piHeader h1,
+.piPage--dark .piCardTitle h2,
+.piPage--dark .piValue{
+  color: #e2e8f0;
+}
+
+.piPage--dark .piHeader p,
+.piPage--dark .piLabelRow,
+.piPage--dark .piItemIcon{
+  color: #9aa8bc;
+}
+
+.piPage--dark .piCard{
+  background: #0f172a;
+  border-color: rgba(148,163,184,0.24);
+  box-shadow: none;
+}
+
+.piPage--dark .piItem{
+  border-top-color: rgba(148,163,184,0.2);
+}
+
+.piPage--dark .piTitleIcon{
+  background: rgba(99,102,241,0.2);
+  color: #c7d2fe;
+}
+
+.piPage--dark .piThemeBtn{
+  border-color: rgba(148,163,184,0.24);
+  background: rgba(15,23,42,0.92);
+  color: #e2e8f0;
+}
+
+.piPage--dark .piBackBtn{
+  border-color: rgba(148,163,184,0.24);
+  background: rgba(15,23,42,0.92);
+  color: #e2e8f0;
+}
+
+@media (max-width: 760px){
+  .piHeader{
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .piHeaderActions{
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .piBackBtn{
+    height: 40px;
+    font-size: 13px;
+    padding: 0 12px;
+  }
+}

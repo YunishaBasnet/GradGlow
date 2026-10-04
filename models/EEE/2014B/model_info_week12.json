@@ -1,0 +1,7 @@
+{
+  "module": "EEE",
+  "presentation": "2014B",
+  "week": "week12",
+  "best_model": "random_forest",
+  "uses_scaler": false
+}

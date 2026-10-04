@@ -1,0 +1,364 @@
+.advisorAppointmentsPage {
+  min-height: 100vh;
+  width: 100%;
+  background: #f4f7fb;
+  color: #0f172a;
+  font-family: inherit;
+}
+
+.advisorAppointmentsPage .advisorPageContainer {
+  width: min(1320px, calc(100% - 64px));
+  margin: 0 auto;
+  padding: 42px 0 64px;
+}
+.advisorAppointmentsPage--dark {
+  background: #0b1220;
+  color: #e2e8f0;
+}
+
+.advisorAppointmentsHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.advisorAppointmentsHeader h1 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: #0f172a;
+}
+
+.advisorAppointmentsHeader p {
+  margin: 8px 0 0;
+  font-size: 14px;
+  color: #64748b;
+}
+
+.advisorAppointmentsHeaderActions {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.appointmentsBackBtn {
+  height: 40px;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  color: #0f172a;
+  padding: 0 14px;
+  font-size: 13px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.appointmentsThemeBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  color: #0f172a;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.appointmentsStats {
+  
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.appointmentsStatCard {
+  border: 1px solid #dde4ef;
+  border-radius: 18px;
+  background: #ffffff;
+  padding: 16px;
+}
+
+.appointmentsStatLabel {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #64748b;
+}
+
+.appointmentsStatValue {
+  margin-top: 4px;
+  font-size: 26px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.appointmentsMainCard {
+  margin-top: 16px;
+  border: 1px solid #dde4ef;
+  border-radius: 18px;
+  background: #ffffff;
+  padding: 16px;
+}
+
+.appointmentsTabs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.appointmentsTab {
+  height: 38px;
+  border-radius: 12px;
+  border: 1px solid #d6dee9;
+  background: #f8fafc;
+  color: #334155;
+  padding: 0 14px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.appointmentsTab--active {
+  border-color: #2563eb;
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.appointmentsDivider {
+  height: 1px;
+  background: #e2e8f0;
+  margin: 14px 0;
+}
+
+.appointmentsEmpty {
+  min-height: 190px;
+  border: 1px dashed #cad4e2;
+  border-radius: 16px;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 8px;
+  color: #64748b;
+  font-size: 14px;
+  background: #f8fafc;
+}
+
+.appointmentsList {
+  display: grid;
+  gap: 10px;
+}
+
+.appointmentCard {
+  border: 1px solid #dde4ef;
+  border-radius: 16px;
+  background: #f8fafc;
+  padding: 14px;
+}
+
+.appointmentCardHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.appointmentCardHead h2 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.appointmentStatus {
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: capitalize;
+}
+
+.appointmentStatus--pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.appointmentStatus--approved {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.appointmentStatus--rejected {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.appointmentCardMeta {
+  margin-top: 7px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px 10px;
+  color: #475569;
+  font-size: 12px;
+}
+
+.appointmentCardReason {
+  margin: 9px 0 0;
+  font-size: 13px;
+  color: #334155;
+}
+
+.appointmentCardActions {
+  margin-top: 10px;
+  display: inline-flex;
+  gap: 8px;
+}
+
+.appointmentActionBtn {
+  height: 34px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  padding: 0 12px;
+  font-size: 13px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.appointmentActionBtn--approve {
+  background: #16a34a;
+  border-color: #16a34a;
+  color: #ffffff;
+}
+
+.appointmentActionBtn--reject {
+  background: #ffffff;
+  border-color: #fca5a5;
+  color: #b91c1c;
+}
+
+.advisorAppointmentsPage--dark .advisorAppointmentsHeader h1,
+.advisorAppointmentsPage--dark .appointmentsStatValue,
+.advisorAppointmentsPage--dark .appointmentCardHead h2,
+.advisorAppointmentsPage--dark .appointmentCardReason {
+  color: #e2e8f0;
+}
+
+.advisorAppointmentsPage--dark .advisorAppointmentsHeader p,
+.advisorAppointmentsPage--dark .appointmentsStatLabel,
+.advisorAppointmentsPage--dark .appointmentsEmpty,
+.advisorAppointmentsPage--dark .appointmentCardMeta {
+  color: #9aa8bc;
+}
+
+.advisorAppointmentsPage--dark .appointmentsBackBtn,
+.advisorAppointmentsPage--dark .appointmentsThemeBtn,
+.advisorAppointmentsPage--dark .appointmentsStatCard,
+.advisorAppointmentsPage--dark .appointmentsMainCard,
+.advisorAppointmentsPage--dark .appointmentCard,
+.advisorAppointmentsPage--dark .appointmentActionBtn--reject {
+  background: #0f172a;
+  border-color: rgba(148, 163, 184, 0.3);
+  color: #e2e8f0;
+}
+
+.advisorAppointmentsPage--dark .appointmentsDivider {
+  background: rgba(148, 163, 184, 0.26);
+}
+
+.advisorAppointmentsPage--dark .appointmentsTab {
+  background: rgba(148, 163, 184, 0.14);
+  border-color: rgba(148, 163, 184, 0.3);
+  color: #dbe7f5;
+}
+
+.advisorAppointmentsPage--dark .appointmentsTab--active {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #ffffff;
+}
+
+.advisorAppointmentsPage--dark .appointmentsEmpty {
+  border-color: rgba(148, 163, 184, 0.3);
+  background: rgba(15, 23, 42, 0.6);
+}
+
+.advisorAppointmentsPage--dark .appointmentStatus--approved {
+  background: rgba(22, 163, 74, 0.25);
+  color: #86efac;
+}
+
+.advisorAppointmentsPage--dark .appointmentStatus--rejected {
+  background: rgba(239, 68, 68, 0.24);
+  color: #fca5a5;
+}
+
+.advisorAppointmentsPage--dark .appointmentStatus--pending {
+  background: rgba(245, 158, 11, 0.26);
+  color: #fcd34d;
+}
+
+@media (max-width: 980px) {
+  .appointmentsStats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .advisorAppointmentsPage .advisorPageContainer {
+    padding: 20px 16px 42px;
+  }
+
+  .advisorAppointmentsHeader {
+    flex-direction: column;
+  }
+
+  .advisorAppointmentsHeaderActions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .appointmentsBackBtn {
+    height: 38px;
+    font-size: 12px;
+    padding: 0 11px;
+  }
+
+  .appointmentsThemeBtn {
+    width: 38px;
+    height: 38px;
+  }
+
+  .appointmentsStats {
+    grid-template-columns: 1fr;
+  }
+
+  .appointmentCardHead {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .appointmentCardMeta {
+    grid-template-columns: 1fr;
+  }
+
+  .appointmentCardActions {
+    width: 100%;
+  }
+
+  .appointmentActionBtn {
+    flex: 1;
+    justify-content: center;
+  }
+}

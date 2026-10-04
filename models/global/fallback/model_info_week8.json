@@ -1,0 +1,7 @@
+{
+  "module": "global",
+  "presentation": "fallback",
+  "week": "week8",
+  "best_model": "grad_boost",
+  "uses_scaler": false
+}

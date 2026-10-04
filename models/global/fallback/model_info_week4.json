@@ -1,0 +1,7 @@
+{
+  "module": "global",
+  "presentation": "fallback",
+  "week": "week4",
+  "best_model": "random_forest",
+  "uses_scaler": false
+}

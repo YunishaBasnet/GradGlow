@@ -1,0 +1,287 @@
+﻿.apPage {
+  min-height: 100vh;
+  background: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  font-family: inherit;
+  color: #0f172a;
+}
+
+.apHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 22px 26px 8px;
+}
+
+.apHeader h1 {
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.15;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.apHeader p {
+  margin: 8px 0 0;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.apThemeBtn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  background: #f8fafc;
+  color: #0f172a;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.apHeaderActions {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.apBackBtn {
+  height: 42px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  color: #0f172a;
+  padding: 0 14px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.apList {
+  flex: 1;
+  padding: 6px 26px 18px;
+}
+
+.apTask {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 16px 14px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.taskMain {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  min-width: 0;
+}
+
+.taskCheckWrap {
+  margin-top: 2px;
+  position: relative;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.taskCheck {
+  position: absolute;
+  opacity: 0;
+  inset: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.taskCheckUi {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.taskCheck:focus-visible + .taskCheckUi {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+.taskCheck:checked + .taskCheckUi {
+  background: #22c55e;
+}
+
+.taskStatusIcon {
+  flex-shrink: 0;
+}
+
+.taskStatusIcon--alert {
+  color: #ef4444;
+}
+
+.taskStatusIcon--pending {
+  color: #94a3b8;
+}
+
+.taskStatusIcon--done {
+  color: #22c55e;
+}
+
+.taskBody {
+  min-width: 0;
+}
+
+.taskTitle {
+  margin: 0;
+  color: #0f172a;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.taskTitle--done {
+  color: #475569;
+  text-decoration: line-through;
+}
+
+.taskDescription {
+  margin: 4px 0 0;
+  color: #334155;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.taskMeta {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.taskDue {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #64748b;
+  font-size: 12px;
+}
+
+.taskTag {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 7px;
+  border-radius: 4px;
+  background: #eef2f7;
+  color: #64748b;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.priorityPill {
+  margin-left: 12px;
+  margin-top: 2px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 3px 10px;
+  font-size: 11px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.priorityPill--high {
+  background: #fee2e2;
+  border-color: #fca5a5;
+  color: #dc2626;
+}
+
+.priorityPill--medium {
+  background: #fef3c7;
+  border-color: #fcd34d;
+  color: #a16207;
+}
+
+.priorityPill--low {
+  background: #dcfce7;
+  border-color: #86efac;
+  color: #16a34a;
+}
+
+.apPage--dark {
+  background: #0b1220;
+  color: #e2e8f0;
+}
+
+.apPage--dark .apHeader h1,
+.apPage--dark .taskTitle {
+  color: #e2e8f0;
+}
+
+.apPage--dark .apHeader p,
+.apPage--dark .taskDescription,
+.apPage--dark .taskDue,
+.apPage--dark .taskTag,
+.apPage--dark .taskTitle--done {
+  color: #9aa8bc;
+}
+
+.apPage--dark .apTask {
+  border-bottom-color: rgba(148, 163, 184, 0.2);
+}
+
+.apPage--dark .taskTag {
+  background: rgba(148, 163, 184, 0.14);
+}
+
+.apPage--dark .apThemeBtn {
+  border-color: rgba(148, 163, 184, 0.24);
+  background: rgba(15, 23, 42, 0.92);
+  color: #e2e8f0;
+}
+
+.apPage--dark .apBackBtn {
+  border-color: rgba(148, 163, 184, 0.24);
+  background: rgba(15, 23, 42, 0.92);
+  color: #e2e8f0;
+}
+
+@media (max-width: 900px) {
+  .apHeader {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .apHeader h1 {
+    font-size: 22px;
+  }
+
+  .apHeader p {
+    font-size: 13px;
+  }
+
+  .apTask {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .priorityPill {
+    margin-left: 0;
+  }
+
+  .apHeaderActions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .apBackBtn {
+    height: 40px;
+    font-size: 13px;
+    padding: 0 12px;
+  }
+}

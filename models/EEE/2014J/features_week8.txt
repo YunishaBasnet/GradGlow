@@ -1,0 +1,14 @@
+avg_assessment_score
+weighted_assessment_score
+assessments_submitted_count
+late_submission_rate
+avg_submission_delay_days
+total_vle_clicks
+active_days_count
+weeks_active_count
+avg_clicks_per_week
+engagement_consistency
+clicks_first_4_weeks
+assessments_submitted_first_4_weeks
+num_of_prev_attempts
+studied_credits

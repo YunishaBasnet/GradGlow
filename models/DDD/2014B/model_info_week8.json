@@ -1,0 +1,7 @@
+{
+  "module": "DDD",
+  "presentation": "2014B",
+  "week": "week8",
+  "best_model": "grad_boost",
+  "uses_scaler": false
+}
