@@ -110,6 +110,22 @@ Risk Factors + Recommended Actions
 
 ---
 
+## Application Screenshots
+
+### Advisor Dashboard
+
+![GradGlow Advisor Dashboard](docs/screenshots/advisor-dashboard.png)
+
+### Admin Dashboard
+
+![GradGlow Admin Dashboard](docs/screenshots/admin-dashboard.png)
+
+### Student Dashboard
+
+![GradGlow Student Dashboard](docs/screenshots/student-dashboard.png)
+
+---
+
 ## Technology Stack
 
 ### Frontend
