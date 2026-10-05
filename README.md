@@ -252,23 +252,14 @@ http://localhost:5173
 
 After running GradGlow locally, the student interface can be explored using the following demo account.
 
-### Student Demo
 
-```text
-Username: student01
-Password: 123456
-```
+| Role | Username | Password |
+|---|---|---|
+| Student | `student01` | `123456` |
+| Advisor | `advisor1@gradglow.edu` | `123456` |
+| Admin | `admin@gradglow.edu` | `123456` |
 
-The student demo provides access to the student-facing GradGlow interface and associated student workflows.
-
-### Advisor Demo
-
-GradGlow also includes an advisor interface for reviewing students, risk levels, risk factors, risk histories, and recommended interventions.
-
-A dedicated public advisor demo account will be added after its credentials and permissions are verified.
-
-> Demo credentials are intended only for local demonstration data. Administrator credentials, JWT secrets, `.env` files, and private configuration are not published.
-
+> Demo credentials are for local testing only. Secrets and private configuration are not included in the repository.
 ---
 
 ## API Overview
