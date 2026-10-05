@@ -1,90 +1,41 @@
 # GradGlow
 
-### Early Student Risk Prediction & Academic Intervention Platform
+**Early Student Risk Prediction & Academic Intervention Platform**
 
-GradGlow is a full-stack machine learning application that identifies students who may be academically at risk and provides advisors with information to support early intervention.
+GradGlow is a full-stack machine learning application designed to identify students who may be academically at risk and provide advisors with actionable information for early intervention.
 
-The system processes assessment and Virtual Learning Environment (VLE) activity data through an ETL and feature-engineering pipeline, applies checkpoint-specific machine learning models, and presents risk predictions through a FastAPI backend and React frontend.
-
-> **Academic project:** GradGlow is a decision-support system. Its predictions are intended to assist academic advisors, not replace human judgment.
+The system combines student assessment performance and Virtual Learning Environment (VLE) engagement data, processes the data through an ETL pipeline, applies checkpoint-specific machine learning models, and exposes predictions through a FastAPI backend and React frontend.
 
 ---
 
-## Features
+## Key Features
 
-### Machine Learning
-- Student risk prediction at Week 4, Week 8, and Week 12 checkpoints
-- Low, Medium, and High risk classification
-- Student-level risk probabilities
+- Early student-risk prediction using machine learning
+- Week 4, Week 8, and Week 12 prediction checkpoints
 - Assessment and VLE engagement feature engineering
-- Risk-factor explanations
-- Recommended intervention actions
-
-### Advisor Experience
-- View students and current risk levels
-- Inspect individual student risk details
-- Review risk history
-- View contributing risk factors
-- Review recommended interventions
-
-### Student Experience
-- Student dashboard
-- Academic risk information
-- Support request submission
-- Messages
-- Appointments
-
-### Administration & API
+- Automated ETL pipeline for uploaded student data
+- Low, Medium, and High student-risk classification
+- Risk probabilities and contributing risk factors
+- Recommended academic intervention actions
+- Advisor dashboard and detailed student-risk views
+- Student dashboard and support workflows
+- Student support requests, messages, and appointments
 - Role-based authentication
-- Student, advisor, and administrator workflows
-- Dataset upload and ETL processing
-- Prediction generation
-- REST API
-- Swagger/OpenAPI documentation
-- API health monitoring
+- Administrative student and user management
+- REST API built with FastAPI
+- Interactive Swagger/OpenAPI documentation
 
 ---
 
-## How GradGlow Works
+## Machine Learning Pipeline
 
-```text
-Raw Educational Data
-        │
-        ▼
-   ETL Pipeline
-        │
-        ▼
- Feature Engineering
-        │
-        ▼
-Canonical Student Dataset
-        │
-        ▼
-Checkpoint-Specific ML Model
-   Week 4 / Week 8 / Week 12
-        │
-        ▼
-  Risk Probability
-        │
-        ▼
-Low / Medium / High Risk
-        │
-        ▼
-Risk Factors + Recommended Actions
-        │
-        ▼
-Advisor / Student Interface
-```
+GradGlow transforms raw educational data into features representing student academic performance and learning engagement.
 
----
-
-## Machine Learning Features
-
-The prediction pipeline uses academic and engagement indicators including:
+Features include:
 
 - Average assessment score
 - Weighted assessment score
-- Assessments submitted
+- Number of assessments submitted
 - Late submission rate
 - Average submission delay
 - Total VLE clicks
@@ -97,19 +48,79 @@ The prediction pipeline uses academic and engagement indicators including:
 - Previous attempts
 - Studied credits
 
-Checkpoint-specific models allow GradGlow to estimate risk using information available at different stages of a course.
+The prediction pipeline uses checkpoint-specific trained models so that student risk can be estimated using information available at different stages of a course.
+
+```text
+Raw Educational Data
+        |
+        v
+   ETL Pipeline
+        |
+        v
+Feature Engineering
+        |
+        v
+Canonical Student Dataset
+        |
+        v
+Checkpoint Model
+(Week 4 / 8 / 12)
+        |
+        v
+Risk Probability
+        |
+        v
+Low / Medium / High
+        |
+        v
+Risk Factors + Recommended Actions
+```
+
+---
+
+## System Architecture
+
+```text
++----------------------+
+|    React Frontend    |
+| Student / Advisor UI |
++----------+-----------+
+           |
+           | REST API
+           v
++----------------------+
+|    FastAPI Backend   |
+| Auth / API / Services|
++----------+-----------+
+           |
+     +-----+------+
+     |            |
+     v            v
++---------+   +-------------+
+| SQLite  |   | ML Pipeline |
+|Database |   | scikit-learn|
++---------+   +------+------+
+                    |
+                    v
+              +-----------+
+              | ETL / Data|
+              | Processing|
+              +-----------+
+```
 
 ---
 
 ## Technology Stack
 
 ### Frontend
+
 - React
 - Vite
 - JavaScript
 - CSS
 
 ### Backend
+
 - Python
 - FastAPI
 - SQLAlchemy
@@ -117,18 +128,265 @@ Checkpoint-specific models allow GradGlow to estimate risk using information ava
 - JWT authentication
 
 ### Machine Learning & Data
+
 - scikit-learn
 - pandas
 - NumPy
 - joblib
 
 ### Database
+
 - SQLite
 
 ### Development
+
 - Git
 - GitHub
 - Uvicorn
+
+---
+
+## Dataset
+
+GradGlow's machine learning pipeline is designed around educational assessment, enrollment, and Virtual Learning Environment interaction data.
+
+The ETL pipeline combines student information with assessment activity and VLE engagement data to create a canonical student-level dataset for machine learning inference.
+
+Large raw datasets, uploaded files, generated ETL outputs, local databases, and oversized model artifacts are intentionally excluded from this repository.
+
+This keeps the repository lightweight and prevents runtime or local data from being committed to source control.
+
+---
+
+## Running the Project
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/YunishaBasnet/GradGlow.git
+cd GradGlow
+```
+
+### 2. Create a Python virtual environment
+
+```bash
+python3 -m venv backend/.venv
+source backend/.venv/bin/activate
+```
+
+### 3. Install backend dependencies
+
+```bash
+pip install -r backend/requirements.txt
+```
+
+### 4. Configure environment variables
+
+Copy the example environment file:
+
+```bash
+cp .env.example .env
+```
+
+Replace the placeholder JWT secret in `.env` with a secure random value of at least 32 characters.
+
+For example:
+
+```bash
+python -c 'import secrets; print(secrets.token_urlsafe(48))'
+```
+
+Then place the generated value in `.env`:
+
+```text
+JWT_SECRET_KEY=your-generated-secret
+```
+
+The `.env` file is intentionally excluded from Git.
+
+### 5. Start the backend
+
+From the project root:
+
+```bash
+uvicorn backend.app:app --reload
+```
+
+The API will run at:
+
+```text
+http://127.0.0.1:8000
+```
+
+Interactive API documentation:
+
+```text
+http://127.0.0.1:8000/docs
+```
+
+Health check:
+
+```text
+http://127.0.0.1:8000/api/health
+```
+
+### 6. Start the frontend
+
+Open another terminal:
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+The frontend normally runs at:
+
+```text
+http://localhost:5173
+```
+
+---
+
+## Demo Access
+
+After running GradGlow locally, the student interface can be explored using the following demo account.
+
+### Student Demo
+
+```text
+Username: student01
+Password: 123456
+```
+
+The student demo provides access to the student-facing GradGlow interface and associated student workflows.
+
+### Advisor Demo
+
+GradGlow also includes an advisor interface for reviewing students, risk levels, risk factors, risk histories, and recommended interventions.
+
+A dedicated public advisor demo account will be added after its credentials and permissions are verified.
+
+> Demo credentials are intended only for local demonstration data. Administrator credentials, JWT secrets, `.env` files, and private configuration are not published.
+
+---
+
+## API Overview
+
+Major API areas include:
+
+```text
+/api/auth
+/api/uploads
+/api/predictions
+/api/student
+/api/advisor
+/api/admin
+/api/health
+```
+
+### Authentication
+
+```text
+POST /api/auth/login
+```
+
+### Prediction Status
+
+```text
+GET /api/predictions/status
+```
+
+### Generate Predictions
+
+```text
+POST /api/predictions/generate
+```
+
+### Advisor Student Overview
+
+```text
+GET /api/advisor/students
+```
+
+### Advisor Student Detail
+
+```text
+GET /api/advisor/students/{student_id}
+```
+
+### Student Dashboard
+
+```text
+GET /api/student/{student_id}/dashboard
+```
+
+### Student Requests
+
+```text
+GET  /api/student/{student_id}/requests
+POST /api/student/{student_id}/requests
+```
+
+### Student Messages
+
+```text
+GET /api/student/{student_id}/messages
+```
+
+### Student Appointments
+
+```text
+GET /api/student/{student_id}/appointments
+```
+
+---
+
+## Example Prediction Output
+
+A GradGlow prediction can contain information such as:
+
+```json
+{
+  "student_id": "30268",
+  "course_key": "AAA-2013J",
+  "checkpoint_week": 4,
+  "risk_probability": 0.9415,
+  "risk_label": "High",
+  "top_factors": [
+    "No assessments submitted",
+    "Low weighted assessment score",
+    "Low LMS engagement"
+  ],
+  "recommended_actions": [
+    "Schedule advisor meeting as soon as possible",
+    "Encourage student to access weekly learning materials",
+    "Recommend academic tutoring or review sessions"
+  ],
+  "model_source": "AAA/2013J",
+  "model_week": "week4"
+}
+```
+
+---
+
+## Validation
+
+GradGlow has been tested across the core application workflow, including:
+
+- Backend compilation and route imports
+- ETL generation of the canonical student dataset
+- Assessment feature generation
+- VLE engagement feature generation
+- Checkpoint-specific machine learning prediction
+- Prediction persistence
+- Advisor student listing
+- Advisor student detail and risk history
+- JWT-protected student endpoints
+- Student support requests
+- Student messages and appointments
+- API health endpoint
+- Prediction readiness endpoint
 
 ---
 
@@ -158,194 +416,38 @@ GradGlow/
 
 ---
 
-## Local Setup
+## Security
 
-### 1. Clone the repository
+Sensitive and runtime-specific files are excluded from Git source control, including:
 
-```bash
-git clone https://github.com/YunishaBasnet/GradGlow.git
-cd GradGlow
-```
-
-### 2. Create the backend virtual environment
-
-```bash
-python3 -m venv backend/.venv
-source backend/.venv/bin/activate
-```
-
-### 3. Install backend dependencies
-
-```bash
-pip install -r backend/requirements.txt
-```
-
-### 4. Configure environment variables
-
-```bash
-cp .env.example .env
-```
-
-Replace the placeholder JWT secret in `.env` with a secure random value of at least 32 characters.
-
-For example, generate one with:
-
-```bash
-python -c 'import secrets; print(secrets.token_urlsafe(48))'
-```
-
-Do **not** commit `.env`.
-
-### 5. Start the backend
-
-From the project root:
-
-```bash
-uvicorn backend.app:app --reload
-```
-
-Backend:
-
-```text
-http://127.0.0.1:8000
-```
-
-Swagger API documentation:
-
-```text
-http://127.0.0.1:8000/docs
-```
-
-Health endpoint:
-
-```text
-http://127.0.0.1:8000/api/health
-```
-
-### 6. Start the frontend
-
-In another terminal:
-
-```bash
-cd frontend
-npm install
-npm run dev
-```
-
-Frontend:
-
-```text
-http://localhost:5173
-```
-
----
-
-## Demo Access
-
-GradGlow includes local development/demo workflows for exploring the student and advisor interfaces.
-
-Public demo credentials are **not currently published in this repository**.
-
-Dedicated restricted demo accounts can be configured when running the application locally.
-
-> Administrator credentials and private environment secrets should never be committed to the repository.
-
----
-
-## API Overview
-
-| Method | Endpoint | Purpose |
-|---|---|---|
-| `POST` | `/api/auth/login` | Authenticate a user |
-| `POST` | `/api/uploads/` | Upload educational data |
-| `POST` | `/api/uploads/multiple` | Upload multiple datasets |
-| `GET` | `/api/predictions/status` | Check prediction readiness |
-| `POST` | `/api/predictions/generate` | Generate risk predictions |
-| `GET` | `/api/advisor/students` | View advisor student list |
-| `GET` | `/api/advisor/students/{student_id}` | View student risk details |
-| `GET` | `/api/student/{student_id}/dashboard` | View student dashboard |
-| `GET` | `/api/student/{student_id}/requests` | View support requests |
-| `POST` | `/api/student/{student_id}/requests` | Create support request |
-| `GET` | `/api/student/{student_id}/messages` | View messages |
-| `GET` | `/api/student/{student_id}/appointments` | View appointments |
-| `GET` | `/api/health` | Backend health check |
-
----
-
-## Example Risk Prediction
-
-```json
-{
-  "student_id": "30268",
-  "course_key": "AAA-2013J",
-  "checkpoint_week": 4,
-  "risk_probability": 0.9415,
-  "risk_label": "High",
-  "top_factors": [
-    "No assessments submitted",
-    "Low weighted assessment score",
-    "Low LMS engagement"
-  ],
-  "recommended_actions": [
-    "Schedule advisor meeting as soon as possible",
-    "Encourage student to access weekly learning materials",
-    "Recommend academic tutoring or review sessions"
-  ],
-  "model_source": "AAA/2013J",
-  "model_week": "week4"
-}
-```
-
----
-
-## Data & Repository Safety
-
-Large or runtime-specific files are intentionally excluded from Git source control, including:
-
-- Raw uploaded datasets
-- Generated ETL outputs
-- Local SQLite databases
 - `.env`
+- Local SQLite databases
+- Uploaded datasets
+- Generated ETL outputs
 - Python virtual environments
-- `node_modules`
+- Frontend dependency directories
 - Runtime caches
 - Oversized model artifacts
 
-This keeps the repository lightweight and prevents local secrets and runtime data from being published.
+JWT signing secrets are supplied through environment configuration rather than committed credentials.
 
----
-
-## Validation
-
-GradGlow has been tested across the core application workflow, including:
-
-- Backend compilation and route imports
-- ETL canonical dataset generation
-- Assessment feature generation
-- VLE engagement feature generation
-- Checkpoint-specific ML prediction
-- Prediction persistence
-- Advisor student listing
-- Advisor student detail and risk history
-- JWT-protected student endpoints
-- Student support requests
-- Student messages and appointments
-- Prediction readiness endpoint
-- Backend health endpoint
+The credentials shown in the Demo Access section are intended only for demonstration data and should not be reused in production environments.
 
 ---
 
 ## Future Improvements
 
+Potential extensions include:
+
 - Cloud deployment
 - PostgreSQL production database
-- Restricted public demo environment
+- Restricted online demonstration environment
 - Automated model retraining
-- Model evaluation dashboard
-- Advisor notification system
-- Longitudinal risk visualization
-- Automated testing
-- CI/CD pipeline
+- Additional model evaluation dashboards
+- Email or notification-based advisor alerts
+- Expanded intervention tracking
+- Longitudinal student-risk visualization
+- Automated testing and CI/CD
 
 ---
 
@@ -359,4 +461,6 @@ GitHub: https://github.com/YunishaBasnet
 
 ## Disclaimer
 
-GradGlow is an academic decision-support project. Machine learning predictions should be interpreted alongside academic context and professional judgment.
+GradGlow is an academic decision-support project.
+
+Risk predictions should support, rather than replace, human academic advising and professional judgment.
